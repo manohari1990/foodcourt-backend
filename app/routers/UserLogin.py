@@ -10,8 +10,7 @@ from fastapi.responses import JSONResponse
 
 SECRETE_KEY = ""
 ALGORITHM= "HS256"
-router = .
-()
+router = APIRouter()
 
 def create_access_token(user_details:dict):
     user_details['exp']= datetime.utcnow() + timedelta(minutes=60)
