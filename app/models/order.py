@@ -1,10 +1,10 @@
-from database import Base
+from app.database import Base
 from sqlalchemy import Column, Integer, String, DateTime, Time, ForeignKey, Numeric, Enum
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
-from constants import PaymentStatus, OrderStatus
+from app.constants import PaymentStatus, OrderStatus
 
 class Order(Base):
     __tablename__= "orders"

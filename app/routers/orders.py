@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Depends, Query, HTTPException
-from database import get_db
+from app.database import get_db
 from sqlalchemy.orm import Session
 from uuid import UUID
-from models.order import Order
-from models.order_item import OrderItem
-from models.menu import Menu
+from app.models.order import Order
+from app.models.order_item import OrderItem
+from app.models.menu import Menu
 from http import HTTPStatus
-from schema.order import OrderCreate, UpsertOrderResponse, OrderUpdate, OrderResponse
+from app.schema.order import OrderCreate, UpsertOrderResponse, OrderUpdate, OrderResponse
 from decimal import Decimal
 
 router = APIRouter()

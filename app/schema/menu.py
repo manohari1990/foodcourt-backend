@@ -3,7 +3,7 @@ from uuid import UUID
 from typing import Optional, List
 from decimal import Decimal
 from datetime import datetime
-from schema.common import PaginationMeta
+from app.schema.common import PaginationMeta
 
 class MenuCreate(BaseModel):
     stall_id: UUID

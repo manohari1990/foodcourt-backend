@@ -3,9 +3,9 @@ from uuid import UUID
 from typing import Optional, List
 from decimal import Decimal
 from datetime import datetime
-from schema.common import PaginationMeta
-from constants import PaymentStatus, OrderStatus
-from schema.order_item import OrderItemCreate
+from app.schema.common import PaginationMeta
+from app.constants import PaymentStatus, OrderStatus
+from app.schema.order_item import OrderItemCreate
 
 class OrderBase(BaseModel):
     

@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from database import engine
-from routers.stalls import router as stalls_router
-from routers.menus import router as menus_router
-from routers.orders import router as order_router
-from routers.UserLogin import router as user_router
+from app.database import engine
+from app.routers.stalls import router as stalls_router
+from app.routers.menus import router as menus_router
+from app.routers.orders import router as order_router
+from app.routers.UserLogin import router as user_router
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()

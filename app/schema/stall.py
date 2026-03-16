@@ -2,7 +2,7 @@ from uuid import UUID
 from pydantic import BaseModel, ConfigDict
 from typing import Optional, List
 from datetime import time, datetime
-from schema.common import PaginationMeta
+from app.schema.common import PaginationMeta
 
 class StallCreate(BaseModel):
     stall_name: str

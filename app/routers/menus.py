@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
-from database import get_db
+from app.database import get_db
 from uuid import UUID
-from models.menu import Menu
-from schema.menu import MenuUpsertResponse, MenuCreate, MenuUpdate
+from app.models.menu import Menu
+from app.schema.menu import MenuUpsertResponse, MenuCreate, MenuUpdate
 from http import HTTPStatus
 
 router = APIRouter()

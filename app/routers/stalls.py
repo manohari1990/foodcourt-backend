@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, File, UploadFile
 from sqlalchemy.orm import Session
 from sqlalchemy import or_
-from database import get_db
-from models.stall import Stall
-from schema.stall import StallCreate, ListStallResponse, UpsertStallResponse, UpdateStall
+from app.database import get_db
+from app.models.stall import Stall
+from app.schema.stall import StallCreate, ListStallResponse, UpsertStallResponse, UpdateStall
 from uuid import UUID
 from http import HTTPStatus
 # import os

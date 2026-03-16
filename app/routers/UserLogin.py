@@ -1,11 +1,11 @@
 from jose import JWTError, jwt
-from database import get_db
+from app.database import get_db
 from fastapi import Depends, HTTPException, APIRouter, Form
 from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 import bcrypt
-from models import Users
-from schema.users import UserCreate
+from app.models import Users
+from app.schema.users import UserCreate
 from fastapi.responses import JSONResponse
 
 SECRETE_KEY = ""

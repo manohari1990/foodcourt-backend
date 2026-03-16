@@ -1,5 +1,5 @@
 from pydantic import BaseModel, ConfigDict
-from constants import UserRole
+from app.constants import UserRole
 from uuid import UUID
 from datetime import datetime
 
