@@ -3,18 +3,21 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - echo Logging in to ECR....
       - ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
 
   build:
     commands:
+      - echo Building Docker image....
       - docker build -t fastapi-app .
       - docker tag fastapi-app:latest $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:latest
 
   post_build:
     commands:
+      - echo Pushing Docker image....
       - docker push $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:latest
-      - printf '[{"name":"fastapi-container","imageUri":"%s"}]' $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:latest > imagedefinitions.json
+      - printf '[{"name":"foodcourt-ECR-container","imageUri":"%s"}]' $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:latest > imagedefinitions.json
 
 artifacts:
   files:
