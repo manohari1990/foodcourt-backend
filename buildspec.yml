@@ -17,7 +17,7 @@ phases:
     commands:
       - echo Pushing Docker image....
       - docker push $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:latest
-      - printf '[{"name":"foodcourt-ECR-container","imageUri":"%s"}]' $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:latest > imagedefinitions.json
+      - printf '[{"name":"fc-be-repo-container","imageUri":"%s"}]' $ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/fastapi-app:latest > imagedefinitions.json
 
 artifacts:
   files:
